@@ -34,3 +34,13 @@ U_BOOT_FDT_OVERLAYS="device-tree/rockchip/overlay/rk3588-uart0-m2.dtbo device-tr
 sudo u-boot-update
 ```
 
+## Configure ROS_DOMAIN_ID
+1. Open the environemnt variable file in the editor:
+```sh
+sudo nano /etc/environment
+```
+2. Add the following line:
+```sh
+ROS_DOMAIN_ID=74
+```
+
