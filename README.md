@@ -34,6 +34,12 @@ U_BOOT_FDT_OVERLAYS="device-tree/rockchip/overlay/rk3588-uart0-m2.dtbo device-tr
 sudo u-boot-update
 ```
 
+On the Orange Pi version of Ubuntu 22.04, 
+```sh
+sudo orangepi-config
+```
+Go to hardware and enable the uart0-m2 and uart1-m1 and save.
+
 ## Configure ROS_DOMAIN_ID
 1. Open the environemnt variable file in the editor:
 ```sh
