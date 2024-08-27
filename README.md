@@ -14,7 +14,8 @@ sudo cp mavlink-router.conf /etc/mavlink-router/main.conf
 
 ## PX4-config
 
-*WIP*
+The config for the PX4 is saved in the px4_config.params file, you can simply load this file by connecting the Pixracer/Pixhawk FCU to a PC with USB, starting QGroundControl and going to:
+Vehicle setup -> Parameters -> Tools -> Load from file..., and select the .params file. The main changes involve setting the baud rates on TEL2 and GPS1 correctly to interface with the companion computer.
 
 
 ## Enabling serial ports
