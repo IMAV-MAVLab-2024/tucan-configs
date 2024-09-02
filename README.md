@@ -41,13 +41,12 @@ sudo orangepi-config
 ```
 Go to hardware and enable the uart0-m2 and uart1-m1 and save.
 
-## Configure ROS2 DDS
+## Install Zenoh bridge on the drone
 
-We use Cyclone DDS since Tailscale does not support multicast traffic, which means automatic node discovery does not work by default.
-
-1. Install Cyclone DDS
 ```sh
-sudo apt install ros-humble-rmw-cyclonedds-cpp
+echo "deb [trusted=yes] https://download.eclipse.org/zenoh/debian-repo/ /" | sudo tee -a /etc/apt/sources.list > /dev/null
+sudo apt update
+sudo apt install zenoh-bridge-dds
 ```
 
 ## Configure Environment Variables
@@ -59,8 +58,6 @@ sudo nano /etc/environment
 2. Add the following lines:
 ```sh
 ROS_DOMAIN_ID=74
-RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-CYCLONEDDS_URI=file:///home/orangepi/tucan-configs/cyclonedds-drone.xml
 ```
 
 
@@ -69,25 +66,27 @@ Currently, PX4 topics are not visible on the external device (f.e. laptop). I do
 
 1. Install tailscale and add the drone to your network
 
-2. Install Cyclone DDS on your laptop
+2. Install zenoh bridge on laptop
 
 ```sh
-sudo apt install ros-humble-rmw-cyclonedds-cpp
+echo "deb [trusted=yes] https://download.eclipse.org/zenoh/debian-repo/ /" | sudo tee -a /etc/apt/sources.list > /dev/null
+sudo apt update
+sudo apt install zenoh-bridge-dds
 ```
 
-3. Clone this repository on your laptop
-
-
-4. Set the following Environment variables on your laptop:
-
+3. Connect to the drones Wifi-AP
 ```sh
-export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-export ROS_DOMAIN_ID=74
-export CYCLONEDDS_URI=file://<path_to>/cyclonedds-laptop.xml 
+SSID: tucan
+password: imav2024
 ```
+3. Start zenoh brdige on the laptop by running
+```sh
+zenoh-bridge-ros2dds -e tcp/192.168.12.1:7447
+```
+
+5. Make sure the ROS_DOMAIN_ID environment variable on your laptop does not match the drone (74). By default it is 0, so not changing it should be fine.
 
 5. And then in a terminal window on your laptop with the environment variables set run the following command.
 ```sh
 ros2 topic list
 ```
-
