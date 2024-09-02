@@ -59,9 +59,9 @@ sudo nano /etc/environment
 
 2. Add the following lines:
 ```sh
-RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-CYCLONEDDS_URI=file:///home/orangepi/tucan-configs/cyclonedds-drone.xml 
 ROS_DOMAIN_ID=74
+RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+CYCLONEDDS_URI=file:///home/orangepi/tucan-configs/cyclonedds-drone.xml
 ```
 
 
@@ -92,8 +92,8 @@ sudo apt install ros-humble-rmw-cyclonedds-cpp
 
 ```sh
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-export CYCLONEDDS_URI=file://<path_to>/cyclonedds-laptop.xml 
 export ROS_DOMAIN_ID=74
+export CYCLONEDDS_URI=file://<path_to>/cyclonedds-laptop.xml 
 ```
 
 5. And then in a terminal window on your laptop with the environment variables set run the following command. This should show the PX4 topics.
