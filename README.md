@@ -50,14 +50,6 @@ We use Cyclone DDS since Tailscale does not support multicast traffic, which mea
 sudo apt install ros-humble-rmw-cyclonedds-cpp
 ```
 
-## Install Zenoh bridge on the drone
-
-```sh
-echo "deb [trusted=yes] https://download.eclipse.org/zenoh/debian-repo/ /" | sudo tee -a /etc/apt/sources.list > /dev/null
-sudo apt update
-sudo apt install zenoh-bridge-dds
-```
-
 ## Configure Environment Variables
 1. Open the environemnt variable file in the editor:
 ```sh
@@ -77,26 +69,13 @@ Currently, PX4 topics are not visible on the external device (f.e. laptop). I do
 
 1. Install tailscale and add the drone to your network
 
-2. Install zenoh bridge on laptop
-
-```sh
-echo "deb [trusted=yes] https://download.eclipse.org/zenoh/debian-repo/ /" | sudo tee -a /etc/apt/sources.list > /dev/null
-sudo apt update
-sudo apt install zenoh-bridge-dds
-```
-
-3. Start zenoh brdige on the drone by running
-```sh
-zenoh-bridge-ros2dds -e tcp/100.122.190.14:7447
-```
-
-4. Install Cyclone DDS on your laptop
+2. Install Cyclone DDS on your laptop
 
 ```sh
 sudo apt install ros-humble-rmw-cyclonedds-cpp
 ```
 
-5. Clone this repository on your laptop
+3. Clone this repository on your laptop
 
 
 4. Set the following Environment variables on your laptop:
