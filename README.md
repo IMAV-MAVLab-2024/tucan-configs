@@ -60,7 +60,7 @@ sudo nano /etc/environment
 2. Add the following lines:
 ```sh
 RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-CYCLONEDDS_URI=file:///home/orangepi/cyclonedds-drone.xml 
+CYCLONEDDS_URI=file:///home/orangepi/tucan-configs/cyclonedds-drone.xml 
 ROS_DOMAIN_ID=74
 ```
 
