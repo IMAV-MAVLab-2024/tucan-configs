@@ -71,7 +71,7 @@ Currently, PX4 topics are not visible on the external device (f.e. laptop). I do
 ```sh
 echo "deb [trusted=yes] https://download.eclipse.org/zenoh/debian-repo/ /" | sudo tee -a /etc/apt/sources.list > /dev/null
 sudo apt update
-sudo apt install zenoh-bridge-dds
+sudo apt install zenoh-bridge-ros2dds
 ```
 
 3. Optionally onnect to the drones Wifi-AP
