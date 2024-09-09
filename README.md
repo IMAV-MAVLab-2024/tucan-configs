@@ -74,17 +74,18 @@ sudo apt update
 sudo apt install zenoh-bridge-dds
 ```
 
-3. Connect to the drones Wifi-AP
+3. Optionally onnect to the drones Wifi-AP
 ```sh
 SSID: tucan
 password: imav2024
 ```
-3. Start zenoh brdige on the laptop by running
+
+3. Start zenoh brdige on the laptop by running (or using the drones tailscale iü)
 ```sh
 zenoh-bridge-ros2dds -e tcp/192.168.12.1:7447
 ```
 
-5. Make sure the ROS_DOMAIN_ID environment variable on your laptop does not match the drone (74). By default it is 0, so not changing it should be fine.
+5. Make sure the ROS_DOMAIN_ID environment variable on your laptop does **NOT** match the drone (74). By default it is 0, so not changing it should be fine.
 
 5. And then in a terminal window on your laptop with the environment variables set run the following command.
 ```sh
