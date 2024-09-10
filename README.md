@@ -49,6 +49,12 @@ sudo apt update
 sudo apt install zenoh-bridge-ros2dds
 ```
 
+## Install Image transport dependencies
+```sh
+sudo apt-get install ros-humble-image-transport-plugins
+sudo apt install libtheora-dev libogg-dev libboost-python-dev
+```
+
 ## Configure Environment Variables
 1. Open the environemnt variable file in the editor:
 ```sh
