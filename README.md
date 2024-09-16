@@ -88,7 +88,7 @@ password: imav2024
 
 3. Start zenoh brdige on the laptop by running (or using the drones tailscale iü)
 ```sh
-zenoh-bridge-ros2dds -e tcp/192.168.12.1:7447
+zenoh-bridge-ros2dds -e tcp/100.102.129.108:7447
 ```
 
 5. Make sure the ROS_DOMAIN_ID environment variable on your laptop does **NOT** match the drone (74). By default it is 0, so not changing it should be fine.
