@@ -20,22 +20,7 @@ Vehicle setup -> Parameters -> Tools -> Load from file..., and select the .param
 
 ## Enabling serial ports
 
-1. Open the u-boot config file.
-```sh
-sudo nano /etc/default/u-boot
-```
-
-2. Set the u boot overlay:
-```sh
-U_BOOT_FDT_OVERLAYS="device-tree/rockchip/overlay/rk3588-uart0-m2.dtbo device-tree/rockchip/overlay/rk3588-uart1-m1.dtbo"
-```
-
-3. Update u-boot config for next boot:
-```sh
-sudo u-boot-update
-```
-
-On the Orange Pi version of Ubuntu 22.04, 
+On the Orange Pi version of Ubuntu 22.04 with the 6.1 kernel, 
 ```sh
 sudo orangepi-config
 ```
@@ -52,12 +37,6 @@ sudo systemctl disable docker.socket docker.service containerd.service
 echo "deb [trusted=yes] https://download.eclipse.org/zenoh/debian-repo/ /" | sudo tee -a /etc/apt/sources.list > /dev/null
 sudo apt update
 sudo apt install zenoh-bridge-ros2dds
-```
-
-## Install Image transport dependencies
-```sh
-sudo apt-get install ros-humble-image-transport-plugins
-sudo apt install libtheora-dev libogg-dev libboost-python-dev
 ```
 
 ## Configure Environment Variables
