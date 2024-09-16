@@ -41,6 +41,11 @@ sudo orangepi-config
 ```
 Go to hardware and enable the uart0-m2 and uart1-m1 and save.
 
+And to enable the camera use:
+```sh
+sudo systemctl disable docker.socket docker.service containerd.service
+```
+
 ## Install Zenoh bridge on the drone
 
 ```sh
